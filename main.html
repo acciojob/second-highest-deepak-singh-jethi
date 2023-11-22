@@ -12,19 +12,19 @@
 			if (arr.length <= 1) {
     return undefined;
   }
-  let highest = Number.MIN_VALUE;
-  let scondHighest = Number.MIN_VALUE;
+  let h = Number.MIN_VALUE;
+  let sh = Number.MIN_VALUE;
 
   for (let i = 0; i < arr.length; i++) {
-    if (highest < arr[i]) {
-      secondHighest = highest;
-      highest = arr[i];
-    } else if (secondHighest < arr[i]) {
-      secondHighest = arr[i];
+    if (h < arr[i]) {
+      sh = h;
+      h = arr[i];
+    } else if (sh < arr[i]) {
+      sh = arr[i];
     }
   }
 
-  return secondHighest == Number.MIN_VALUE ? "-Infinity" : secondHighest;
+  return sh == Number.MIN_VALUE ? "-Infinity" : sh;
 			
 		}
 
