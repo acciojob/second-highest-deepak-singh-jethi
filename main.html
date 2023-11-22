@@ -9,7 +9,8 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-//return -Infinity if array size is less than 2
+
+		 //return -Infinity if array size is less than 2
   if (arr.length <= 1) {
     return -Infinity;
   }
@@ -42,12 +43,12 @@
     }
   }
 
-  return sh == Number.MIN_VALUE ? "-Infinity" : sh;
+  return sh == Number.MIN_VALUE ? -Infinity : sh;3
 			
 		}
 
 		function Main() {
-			var n = rompt("Enter the number of elements");
+			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
