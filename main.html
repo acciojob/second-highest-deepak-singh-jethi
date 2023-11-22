@@ -20,18 +20,17 @@
       sh = highest;
       highest = arr[i];
 
-      console.log("highest", highest);
-    } else if (sh < arr[i]) {
+    } else if (sh < arr[i] ) {
       sh = arr[i];
     }
   }
 
-  return sh == Number.MIN_VALUE ? "-Infinity" : sh;
+  return sh == Number.MIN_VALUE ? -Infinity : sh;
 			
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			var n = rompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
