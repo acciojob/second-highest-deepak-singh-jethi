@@ -10,7 +10,7 @@
 	<script>
 		function secondHighest(arr) {
 			if (arr.length <= 1) {
-    return "-Infinity";
+    return undefined;
   }
   let highest = Number.MIN_VALUE;
   let scondHighest = Number.MIN_VALUE;
@@ -19,7 +19,7 @@
     if (highest < arr[i]) {
       secondHighest = highest;
       highest = arr[i];
-    } else if (secondHighest < arr[i] && arr[i] != highest) {
+    } else if (secondHighest < arr[i]) {
       secondHighest = arr[i];
     }
   }
@@ -29,7 +29,7 @@
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			var n = rompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
