@@ -9,9 +9,27 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-	if (arr.length <= 1) {
+//return -Infinity if array size is less than 2
+  if (arr.length <= 1) {
     return -Infinity;
   }
+
+  // return -Infinity if all element are same
+
+  let allSame = true;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] != arr[i + 1]) {
+      allSame = false;
+      break;
+    }
+  }
+
+  if (allSame == true) {
+    return -Infinity;
+  }
+
+  // if all elements are not same
+
   let highest = Number.NEGATIVE_INFINITY;
   let sh = Number.NEGATIVE_INFINITY;
 
@@ -19,18 +37,17 @@
     if (highest < arr[i]) {
       sh = highest;
       highest = arr[i];
-
-    } else if (sh < arr[i] ) {
+    } else if (sh < arr[i] && arr[i] != highest) {
       sh = arr[i];
     }
   }
 
-  return sh == Number.MIN_VALUE ? -Infinity : sh;
+  return sh == Number.MIN_VALUE ? "-Infinity" : sh;
 			
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			var n = rompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
